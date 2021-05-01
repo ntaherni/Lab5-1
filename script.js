@@ -4,12 +4,29 @@ const img = new Image(); // used to load image from <input> and draw to canvas
 
 // Fires whenever the img object loads a new image (such as with img.src =)
 img.addEventListener('load', () => {
-  // TODO
-
+  const canvas = document.getElementById('user-image');
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  var buttons = document.getElementById('button-group');
+  buttons[0].disabled = false;
+  buttons[1].disabled = false;
+  document.getElementById('voice-selection').disabled = false;
+  document.querySelector("[type='submit']").disabled = false;
+  var dim = getDimensions(canvas.width, canvas.height, img.width, img.height);
+  ctx.fillStyle = 'black';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.draw(img, startX, startY, width, height);
   // Some helpful tips:
   // - Fill the whole Canvas with black first to add borders on non-square images, then draw on top
   // - Clear the form when a new image is selected
   // - If you draw the image to canvas here, it will update as soon as a new image is selected
+});
+
+img.addEventListener('change', () => {
+  let file = document.getElementbyId('image-input');
+  const imgurl = URL.createObjectURL(file);
+  img.src = imgurl;
+  img.alt = imgurl;
 });
 
 /**
