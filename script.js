@@ -113,19 +113,19 @@ range.addEventListener('input', () => {
   utterThis.volume = range.value / 100;
   if(range.value == 0)
   {
-    volimgsrc.src = '/icons/volume-level-0.svg';
+    volimgsrc.src = './icons/volume-level-0.svg';
   }
   else if(range.value > 0 && range.value < 34)
   {
-    volimgsrc.src = '/icons/volume-level-1.svg';
+    volimgsrc.src = './icons/volume-level-1.svg';
   }
   else if(range.value > 33 && range.value < 67)
   {
-    volimgsrc.src = '/icons/volume-level-2.svg';
+    volimgsrc.src = './icons/volume-level-2.svg';
   }
   else if(range.value > 66)
   {
-    volimgsrc.src = '/icons/volume-level-3.svg';
+    volimgsrc.src = './icons/volume-level-3.svg';
   }
 });
 
