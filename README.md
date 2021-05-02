@@ -5,7 +5,7 @@
 
 ## Part 1:
 
-LINK TO YOUR PUBLISHED SITE
+https://ntaherni.github.io/Lab5-1/
 
 ## Part 2:
 
